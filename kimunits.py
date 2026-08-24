@@ -13,12 +13,7 @@ import subprocess
 import warnings
 import numpy as np
 
-# sys.path.append("..")
-# from logger import logging
 warnings.simplefilter("ignore")
-
-# logger = logging.getLogger("pipeline").getChild("kimunits")
-# logger.setLevel(logging.DEBUG)
 
 __all__ = ["UnitConversion",
            "check_units_util",
@@ -124,7 +119,6 @@ convert = convert_units
 def convert_list(x, from_unit, to_unit=None, convert=convert, dofit=True):
     """ Thread conversion over a list, or list of lists """
     # Need a list for scoping reasons
-    # logger.debug("Attempting to convert <%r> from <%r> to <%r>.", x, from_unit, to_unit)
 
     # Constant shortcut
     if from_unit in (1, 1.0, '1'):
@@ -152,7 +146,7 @@ def convert_list(x, from_unit, to_unit=None, convert=convert, dofit=True):
         fit = (a,b) if linear else None
 
     output = convert_inner(x, fit=fit)
-    # logger.debug("Obtained %r <%r> = %r <%r>.", x, from_unit, output, to_unit)
+    
     return output, to_unit
 
 
