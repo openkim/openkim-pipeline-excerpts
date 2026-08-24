@@ -96,10 +96,10 @@ def convert_units(from_value, from_unit, wanted_unit=None, suppress_unit=False):
     TEMPERATURE_FUNCTION_UNITS=["degC","tempC","degF","tempF"]
 
     if from_unit in TEMPERATURE_FUNCTION_UNITS :
-        args = ['units_util','-o', '%1.15e', '-qt1', ''.join((from_unit,'(',from_value,')'))]
+        args = [units_util,'-o', '%1.15e', '-qt1', ''.join((from_unit,'(',from_value,')'))]
 
     else :
-        args = ['units_util','-o', '%1.15e', '-qt1', ' '.join((from_value, from_unit))]
+        args = [units_util,'-o', '%1.15e', '-qt1', ' '.join((from_value, from_unit))]
 
     if wanted_unit:
         args.append(wanted_unit)
